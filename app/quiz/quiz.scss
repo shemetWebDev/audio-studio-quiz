@@ -1,0 +1,85 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.quiz {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+
+  &__bg {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, #111128 0%, $color-bg 70%);
+    z-index: -1;
+  }
+
+  &__card {
+    width: 100%;
+    max-width: 540px;
+    background: $color-bg-card;
+    border: 0.5px solid $color-border;
+    border-radius: $radius-xl;
+    padding: 2rem;
+    backdrop-filter: blur(24px);
+    @include fade-up;
+  }
+
+  &__body {
+    min-height: 320px;
+    margin: 1.75rem 0;
+  }
+
+  &__error {
+    font-size: 13px;
+    color: $color-error;
+    margin-bottom: 1rem;
+    padding: 10px 14px;
+    background: $color-error-bg;
+    border: 0.5px solid $color-error-border;
+    border-radius: $radius-md;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__btn-back {
+    background: transparent;
+    border: 0.5px solid $color-border;
+    border-radius: $radius-pill;
+    color: $color-text-muted;
+    font-size: 14px;
+    padding: 12px 20px;
+    transition: all $transition-base;
+
+    &:hover:not(:disabled) {
+      border-color: $color-border-hover;
+      color: $color-text-primary;
+    }
+
+    &:disabled { opacity: 0.4; cursor: not-allowed; }
+  }
+
+  &__btn-next {
+    margin-left: auto;
+    background: $color-white;
+    color: $color-bg;
+    border-radius: $radius-pill;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 28px;
+    transition: opacity $transition-base, transform $transition-base;
+
+    &:hover:not(:disabled) {
+      opacity: 0.82;
+      transform: translateY(-1px);
+    }
+
+    &:disabled { opacity: 0.5; cursor: not-allowed; }
+  }
+}

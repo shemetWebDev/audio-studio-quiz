@@ -1,0 +1,61 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.done {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &__bg {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, #111128 0%, $color-bg 70%);
+    z-index: -1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include fade-up;
+  }
+
+  &__check {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 0.5px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: $color-white;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: 500;
+    color: $color-text-primary;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.75rem;
+  }
+
+  &__sub {
+    font-size: 14px;
+    color: $color-text-muted;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  &__back {
+    font-size: 13px;
+    color: $color-text-muted;
+    transition: color $transition-base;
+
+    &:hover { color: $color-text-primary; }
+  }
+}
