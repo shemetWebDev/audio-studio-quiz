@@ -53,7 +53,7 @@ async function sendEmail(html: string, text: string, name: string): Promise<void
     },
     body: JSON.stringify({
       from: EMAIL_FROM,
-      to: [EMAIL_TO],
+      to: EMAIL_TO,
       subject: `🎛 Анкета — ${name || 'Кандидат'} · Audio Studio`,
       html,
       text,
