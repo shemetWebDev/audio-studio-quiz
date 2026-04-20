@@ -8,7 +8,7 @@ import { FormData } from '@/types/form'
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN ?? '' // ← токен бота от @BotFather
 const TELEGRAM_CHAT_ID   = process.env.TELEGRAM_CHAT_ID   ?? '' // ← chat id (@userinfobot)
 const RESEND_API_KEY     = process.env.RESEND_API_KEY      ?? '' // ← resend.com API key
-const EMAIL_TO           = process.env.EMAIL_TO            ?? '' // ← куда приходят анкеты
+const EMAIL_TO           = (process.env.EMAIL_TO ?? '').split(',').map(s => s.trim()).filter(Boolean)
 const EMAIL_FROM         = process.env.EMAIL_FROM          ?? '' // ← от кого (верифицирован в Resend)
 
 // ─── Telegram ─────────────────────────────────────────────────────────────────
@@ -41,7 +41,7 @@ async function sendTelegram(text: string): Promise<void> {
 // ─── Email via Resend ─────────────────────────────────────────────────────────
 
 async function sendEmail(html: string, text: string, name: string): Promise<void> {
-  if (!RESEND_API_KEY || !EMAIL_TO) {
+  if (!RESEND_API_KEY || !EMAIL_TO.length) {
     console.warn('[Email] Resend не настроен — пропускаем')
     return
   }

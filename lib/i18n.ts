@@ -1,0 +1,287 @@
+export type Lang = 'ru' | 'ua' | 'en'
+
+export const translations = {
+  ru: {
+    brand: 'TOPMUSICARTS',
+    mainDesc: 'Ищем специалиста по воссозданию треков —',
+    mainDesc2: 'по волне и спектру, до точного совпадения.',
+    mainGenres: 'Tech House · Melodic Techno · House',
+    mainCta: 'Начать',
+
+    navBack: '← Назад',
+    navNext: 'Далее →',
+    navSubmit: 'Отправить',
+    navSending: 'Отправка...',
+
+    addComment: '+ Оставить комментарий',
+    hideComment: '− Скрыть',
+    commentPlaceholder: 'Ваш комментарий...',
+
+    s1Index: '01 · О вас',
+    s1Heading: 'Хотите стать частью команды TopMusicArts?',
+    s1Sub: 'Работать вместе с нами, занимаясь музыкой — воссоздавать треки, развиваться в продакшне.',
+    s1OptYes: 'Да, хочу',
+    s1LabelAbout: 'Расскажите о себе',
+    s1PlaceholderAbout: 'Кто вы, чем занимаетесь, какой опыт в музыке...',
+
+    s2Index: '02 · Контакты',
+    s2Heading: 'Как с вами связаться?',
+    s2Sub: 'Укажите актуальные данные — свяжемся после рассмотрения анкеты.',
+    s2LabelName: 'Имя и фамилия',
+    s2PlaceholderName: 'Иван Петров',
+    s2LabelEmail: 'Email',
+    s2LabelTelegram: 'Telegram',
+    s2LabelLocation: 'Город / страна',
+    s2PlaceholderLocation: 'Киев, Украина',
+
+    s3Index: '03 · Задача',
+    s3Heading: 'Ваша задача — воссоздавать инструменталы',
+    s3Sub: 'Точное совпадение по волне и спектру, с использованием разрешённых инструментов.',
+    s3LabelTools: 'Разрешённые инструменты',
+    s3LabelCriteria: 'Критерии оценки',
+    s3LabelConfidence: 'Как вы оцениваете такую задачу?',
+    s3OptEasy: 'Уверен — справлюсь',
+    s3OptMixed: 'Частично понимаю задачу',
+    s3OptLearning: 'Хочу разобраться',
+
+    s4Index: '04 · DAW',
+    s4Heading: 'В какой DAW вы создаёте музыку?',
+    s4Sub: 'От выбора зависит, какой проект вы получите для ознакомления.',
+
+    s5Index: '05 · Треки',
+    s5Heading: 'Прослушайте треки',
+    s5Sub: 'Ниже представлены два трека: один — воссозданный командой TopMusicArts, второй — оригинал. Прослушайте их, оцените свои возможности и понимание звука, и подумайте, сможете ли вы работать в этой сфере.',
+    s5LabelOriginal: 'Оригинал',
+    s5DlOriginal: 'Скачать ↓',
+    s5LabelRecreated: 'Воссозданный — TopMusicArts',
+    s5DlRecreated: 'Скачать ↓',
+    s5LabelAssess: 'Как оцениваете уровень воссоздания?',
+
+    s6Index: '06 · Проект',
+    s6Heading: 'Скачайте проект для ознакомления',
+    s6Sub: 'Посмотрите, как разбит бит по дорожкам, как всё оформлено, как звучат инструменты, ударные и сведение.',
+    s6LabelAssess: 'Сможете воссоздать на таком уровне?',
+    s6OptYes: 'Справлюсь',
+    s6OptPartially: 'Частично',
+    s6OptNo: 'Затрудняюсь',
+    s6DlProject: 'Скачать проект ↓',
+
+    s7Index: '07 · Портфолио',
+    s7Heading: 'Если уверены — оставьте портфолио',
+    s7Sub: 'Если вы уверены в своём понимании звука, сможете воссоздавать проекты на уровне, близком к оригиналу, вы будете направлены в группу TopMusicArts Team. Необязательно — но сильные работы значительно ускоряют принятие решения.',
+    s7LabelPortfolio: 'Ссылки на работы или резюме',
+    s7Optional: 'необязательно',
+    s7PlaceholderPortfolio: 'SoundCloud, Google Drive, Spotify, Notion CV — по одной ссылке на строку',
+
+    toolsItems: [
+      'Xfer Serum v2.0.16 — основной синтезатор',
+      'Kickstart v2 — для сайдчейна',
+      'Стандартные эффекты вашей DAW',
+    ],
+    criteriaItems: [
+      'Волновая форма и спектр', 'Ритм и грув',
+      'Пресеты и тембры', 'Аранжировка',
+      'Автоматизации', 'Общий уровень громкости (LUFS)',
+    ],
+
+    projectAbleton: 'Ableton Project',
+    projectLogic: 'Logic Pro Project',
+    projectFL: 'FL Studio Project',
+
+    doneTitle: 'Анкета отправлена',
+    doneSub: 'Мы изучим вашу анкету и свяжемся по указанным контактам.',
+    doneBack: '← На главную',
+    doneThanks: 'Спасибо',
+  },
+
+  ua: {
+    brand: 'TOPMUSICARTS',
+    mainDesc: 'Шукаємо спеціаліста з відтворення треків —',
+    mainDesc2: 'за хвилею та спектром, до точного збігу.',
+    mainGenres: 'Tech House · Melodic Techno · House',
+    mainCta: 'Почати',
+
+    navBack: '← Назад',
+    navNext: 'Далі →',
+    navSubmit: 'Надіслати',
+    navSending: 'Надсилання...',
+
+    addComment: '+ Залишити коментар',
+    hideComment: '− Сховати',
+    commentPlaceholder: 'Ваш коментар...',
+
+    s1Index: '01 · Про вас',
+    s1Heading: 'Хочете стати частиною команди TopMusicArts?',
+    s1Sub: 'Працювати разом з нами, займаючись музикою — відтворювати треки, розвиватися у продакшні.',
+    s1OptYes: 'Так, хочу',
+    s1LabelAbout: 'Розкажіть про себе',
+    s1PlaceholderAbout: 'Хто ви, чим займаєтесь, який досвід у музиці...',
+
+    s2Index: '02 · Контакти',
+    s2Heading: "Як з вами зв'язатись?",
+    s2Sub: "Вкажіть актуальні дані — зв'яжемось після розгляду анкети.",
+    s2LabelName: "Ім'я та прізвище",
+    s2PlaceholderName: 'Іван Петров',
+    s2LabelEmail: 'Email',
+    s2LabelTelegram: 'Telegram',
+    s2LabelLocation: 'Місто / країна',
+    s2PlaceholderLocation: 'Київ, Україна',
+
+    s3Index: '03 · Завдання',
+    s3Heading: 'Ваше завдання — відтворювати інструменталки',
+    s3Sub: 'Точний збіг за хвилею та спектром, з використанням дозволених інструментів.',
+    s3LabelTools: 'Дозволені інструменти',
+    s3LabelCriteria: 'Критерії оцінки',
+    s3LabelConfidence: 'Як ви оцінюєте таке завдання?',
+    s3OptEasy: 'Впевнений — впораюсь',
+    s3OptMixed: 'Частково розумію завдання',
+    s3OptLearning: 'Хочу розібратись',
+
+    s4Index: '04 · DAW',
+    s4Heading: 'У якій DAW ви створюєте музику?',
+    s4Sub: 'Від вибору залежить, який проєкт ви отримаєте для ознайомлення.',
+
+    s5Index: '05 · Треки',
+    s5Heading: 'Прослухайте треки',
+    s5Sub: 'Нижче представлені два треки: один — відтворений командою TopMusicArts, другий — оригінал. Прослухайте їх, оцініть свої можливості та розуміння звуку, і подумайте, чи зможете ви працювати в цій сфері.',
+    s5LabelOriginal: 'Оригінал',
+    s5DlOriginal: 'Завантажити ↓',
+    s5LabelRecreated: 'Відтворений — TopMusicArts',
+    s5DlRecreated: 'Завантажити ↓',
+    s5LabelAssess: 'Як оцінюєте рівень відтворення?',
+
+    s6Index: '06 · Проєкт',
+    s6Heading: 'Завантажте проєкт для ознайомлення',
+    s6Sub: 'Подивіться, як розбитий біт по доріжках, як всього оформлено, як звучать інструменти, ударні та зведення.',
+    s6LabelAssess: 'Зможете відтворити на такому рівні?',
+    s6OptYes: 'Впораюсь',
+    s6OptPartially: 'Частково',
+    s6OptNo: 'Важко сказати',
+    s6DlProject: 'Завантажити проєкт ↓',
+
+    s7Index: '07 · Портфоліо',
+    s7Heading: 'Якщо впевнені — залиште портфоліо',
+    s7Sub: "Якщо ви впевнені у своєму розумінні звуку, зможете відтворювати проєкти на рівні, близькому до оригіналу, вас буде скеровано до групи TopMusicArts Team. Необов'язково — але сильні роботи значно прискорюють прийняття рішення.",
+    s7LabelPortfolio: 'Посилання на роботи або резюме',
+    s7Optional: "необов'язково",
+    s7PlaceholderPortfolio: 'SoundCloud, Google Drive, Spotify, Notion CV — по одному посиланню на рядок',
+
+    toolsItems: [
+      'Xfer Serum v2.0.16 — основний синтезатор',
+      'Kickstart v2 — для сайдчейну',
+      'Стандартні ефекти вашої DAW',
+    ],
+    criteriaItems: [
+      'Форма хвилі та спектр', 'Ритм і грув',
+      'Пресети та тембри', 'Аранжування',
+      'Автоматизації', 'Загальний рівень гучності (LUFS)',
+    ],
+
+    projectAbleton: 'Ableton Project',
+    projectLogic: 'Logic Pro Project',
+    projectFL: 'FL Studio Project',
+
+    doneTitle: 'Анкету надіслано',
+    doneSub: "Ми розглянемо вашу анкету та зв'яжемось за вказаними контактами.",
+    doneBack: '← На головну',
+    doneThanks: 'Дякуємо',
+  },
+
+  en: {
+    brand: 'TOPMUSICARTS',
+    mainDesc: 'Looking for a specialist in track recreation —',
+    mainDesc2: 'by waveform and spectrum, to an exact match.',
+    mainGenres: 'Tech House · Melodic Techno · House',
+    mainCta: 'Start',
+
+    navBack: '← Back',
+    navNext: 'Next →',
+    navSubmit: 'Submit',
+    navSending: 'Sending...',
+
+    addComment: '+ Add a comment',
+    hideComment: '− Hide',
+    commentPlaceholder: 'Your comment...',
+
+    s1Index: '01 · About You',
+    s1Heading: 'Want to join the TopMusicArts team?',
+    s1Sub: 'Work with us, doing what you love — recreating tracks and growing as a producer.',
+    s1OptYes: 'Yes, I want to',
+    s1LabelAbout: 'Tell us about yourself',
+    s1PlaceholderAbout: 'Who you are, your background, music experience...',
+
+    s2Index: '02 · Contacts',
+    s2Heading: 'How can we reach you?',
+    s2Sub: "Provide your current info — we'll reach out after reviewing your application.",
+    s2LabelName: 'Full name',
+    s2PlaceholderName: 'John Smith',
+    s2LabelEmail: 'Email',
+    s2LabelTelegram: 'Telegram',
+    s2LabelLocation: 'City / country',
+    s2PlaceholderLocation: 'London, UK',
+
+    s3Index: '03 · Task',
+    s3Heading: 'Your task — recreate instrumentals',
+    s3Sub: 'Exact match by waveform and spectrum, using only the allowed tools.',
+    s3LabelTools: 'Allowed tools',
+    s3LabelCriteria: 'Evaluation criteria',
+    s3LabelConfidence: 'How do you assess this task?',
+    s3OptEasy: 'Confident I can do it',
+    s3OptMixed: 'I partially understand it',
+    s3OptLearning: 'I want to learn',
+
+    s4Index: '04 · DAW',
+    s4Heading: 'What DAW do you use?',
+    s4Sub: 'Your choice determines which project file you will receive.',
+
+    s5Index: '05 · Tracks',
+    s5Heading: 'Listen to the tracks',
+    s5Sub: 'Below are two tracks: one recreated by TopMusicArts, the other is the original. Listen to them, assess your abilities and understanding of sound, and consider whether you can work in this field.',
+    s5LabelOriginal: 'Original',
+    s5DlOriginal: 'Download ↓',
+    s5LabelRecreated: 'Recreated — TopMusicArts',
+    s5DlRecreated: 'Download ↓',
+    s5LabelAssess: 'How do you rate the recreation quality?',
+
+    s6Index: '06 · Project',
+    s6Heading: 'Download the project to study',
+    s6Sub: 'See how the beat is broken down by tracks, how everything is arranged, how instruments, drums and mix sound.',
+    s6LabelAssess: 'Can you recreate at this level?',
+    s6OptYes: 'Yes, I can',
+    s6OptPartially: 'Partially',
+    s6OptNo: 'Not sure',
+    s6DlProject: 'Download project ↓',
+
+    s7Index: '07 · Portfolio',
+    s7Heading: 'If confident — share your portfolio',
+    s7Sub: "If you are confident in your understanding of sound and can recreate projects to a level close to the original, you will be directed to the TopMusicArts Team group. Optional — but strong work speeds up our decision.",
+    s7LabelPortfolio: 'Links to work or resume',
+    s7Optional: 'optional',
+    s7PlaceholderPortfolio: 'SoundCloud, Google Drive, Spotify, Notion CV — one link per line',
+
+    toolsItems: [
+      'Xfer Serum v2.0.16 — main synthesizer',
+      'Kickstart v2 — for sidechain',
+      'Stock effects of your DAW',
+    ],
+    criteriaItems: [
+      'Waveform & spectrum', 'Rhythm & groove',
+      'Presets & timbre', 'Arrangement',
+      'Automation', 'Overall loudness (LUFS)',
+    ],
+
+    projectAbleton: 'Ableton Project',
+    projectLogic: 'Logic Pro Project',
+    projectFL: 'FL Studio Project',
+
+    doneTitle: 'Application submitted',
+    doneSub: "We'll review your application and get back to you shortly.",
+    doneBack: '← Back to home',
+    doneThanks: 'Thank you',
+  },
+} as const
+
+export type T = {
+  [K in keyof typeof translations.ru]:
+    typeof translations.ru[K] extends readonly string[] ? readonly string[] : string
+}

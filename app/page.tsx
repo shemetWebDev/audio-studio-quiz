@@ -1,8 +1,10 @@
 'use client'
 import Link from 'next/link'
+import { useLang } from '@/contexts/LangContext'
 import '@/app/home.scss'
 
 export default function Home() {
+  const { t } = useLang()
   const b = 'home'
 
   return (
@@ -11,7 +13,7 @@ export default function Home() {
       <div className={`${b}__grain`} />
 
       <div className={`${b}__hero`}>
-        <span className={`${b}__brand`}>TopMusicArts</span>
+        <span className={`${b}__brand`}>{t.brand}</span>
 
         <h1 className={`${b}__title`}>
           Audio<br />
@@ -19,13 +21,13 @@ export default function Home() {
         </h1>
 
         <p className={`${b}__description`}>
-          Ищем специалиста по воссозданию треков —<br />
-          по волне и спектру, до точного совпадения.
-          <span>Tech House · Melodic Techno · House</span>
+          {t.mainDesc}<br />
+          {t.mainDesc2}
+          <span>{t.mainGenres}</span>
         </p>
 
         <Link href="/quiz" className={`${b}__cta`}>
-          Начать
+          {t.mainCta}
           <span className={`${b}__cta-arrow`}>↗</span>
         </Link>
       </div>

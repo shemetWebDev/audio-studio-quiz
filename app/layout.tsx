@@ -1,15 +1,18 @@
 import type { Metadata } from 'next'
+import Providers from './providers'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Audio Studio — Отбор специалистов',
-  description: 'Анкета для кандидатов на позицию звукового дизайнера',
+  title: 'TopMusicArts — Отбор специалистов',
+  description: 'Анкета для кандидатов TopMusicArts',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
