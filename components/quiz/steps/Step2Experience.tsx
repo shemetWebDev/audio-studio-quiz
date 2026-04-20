@@ -3,87 +3,52 @@ import '@/components/quiz/steps/step.scss'
 
 type Props = { data: FormData; update: (f: Partial<FormData>) => void }
 
-const EXP_OPTIONS = [
-  { value: 'yes',      label: 'Есть опыт' },
-  { value: 'learning', label: 'В процессе' },
-  { value: 'no',       label: 'Впервые' },
-] as const
+const REQUIREMENTS = [
+  'Xfer Serum v2.0.16 — основной синтезатор',
+  'Kickstart v2 — для сайдчейна',
+  'Стандартные эффекты вашей DAW',
+]
 
-export default function Step2Experience({ data, update }: Props) {
+const CRITERIA = [
+  'Волновая форма и спектр',
+  'Ритм и грув',
+  'Пресеты и тембры',
+  'Аранжировка',
+  'Автоматизации',
+  'Общий уровень громкости (LUFS)',
+]
+
+export default function Step2Task({ data: _data, update: _update }: Props) {
   const b = 'step'
 
   return (
     <div className={b}>
-      <p className={`${b}__index`}>02 · Опыт</p>
-      <h2 className={`${b}__heading`}>Воссоздание треков</h2>
+      <p className={`${b}__index`}>02 · Задача</p>
+      <h2 className={`${b}__heading`}>Что нужно делать</h2>
       <p className={`${b}__subheading`}>
-        Задача — точное совпадение по волне и спектру.
-        Оцените свой уровень честно — это помогает нам правильно выстроить процесс.
+        Воссоздавать инструменталы в DAW с точностью до оригинала.
       </p>
 
       <div className={`${b}__field`}>
-        <label className={`${b}__label`}>Есть ли опыт воссоздания треков?</label>
-        <div className={`${b}__options`}>
-          {EXP_OPTIONS.map(opt => (
-            <button
-              key={opt.value}
-              className={`${b}__option${data.hasRecreationExp === opt.value ? ` ${b}__option--selected` : ''}`}
-              onClick={() => update({ hasRecreationExp: opt.value })}
-            >
-              {opt.label}
-            </button>
+        <label className={`${b}__label`}>Разрешённые инструменты</label>
+        <div className={`${b}__info-list`}>
+          {REQUIREMENTS.map(r => (
+            <div key={r} className={`${b}__info-item`}>
+              <span className={`${b}__info-dot`} />
+              {r}
+            </div>
           ))}
         </div>
       </div>
 
-      {data.hasRecreationExp === 'yes' && (
-        <>
-          <div className={`${b}__field`}>
-            <label className={`${b}__label`}>Сколько треков воссоздали?</label>
-            <input
-              className={`${b}__input`}
-              placeholder="напр. 10–15 треков"
-              value={data.recreationCount}
-              onChange={e => update({ recreationCount: e.target.value })}
-            />
-          </div>
-
-          <div className={`${b}__field`}>
-            <label className={`${b}__label`}>Как подходите к анализу оригинала?</label>
-            <textarea
-              className={`${b}__textarea`}
-              placeholder="Опишите процесс: какие инструменты анализа используете, как сравниваете результат по спектру, что проверяете в первую очередь..."
-              value={data.recreationDetails}
-              onChange={e => update({ recreationDetails: e.target.value })}
-              rows={3}
-            />
-          </div>
-
-          <div className={`${b}__field`}>
-            <label className={`${b}__label`}>Ссылки на примеры работ</label>
-            <textarea
-              className={`${b}__textarea`}
-              placeholder="SoundCloud, Google Drive, Dropbox, YouTube — любые публичные ссылки"
-              value={data.experienceLinks}
-              onChange={e => update({ experienceLinks: e.target.value })}
-              rows={2}
-            />
-          </div>
-        </>
-      )}
-
-      {data.hasRecreationExp === 'learning' && (
-        <div className={`${b}__field`}>
-          <label className={`${b}__label`}>Что уже пробовали? Какие результаты?</label>
-          <textarea
-            className={`${b}__textarea`}
-            placeholder="Что получалось, где возникали сложности, над чем работаете сейчас..."
-            value={data.recreationDetails}
-            onChange={e => update({ recreationDetails: e.target.value })}
-            rows={3}
-          />
+      <div className={`${b}__field`}>
+        <label className={`${b}__label`}>Критерии оценки</label>
+        <div className={`${b}__tags`} style={{ pointerEvents: 'none' }}>
+          {CRITERIA.map(c => (
+            <span key={c} className={`${b}__tag ${b}__tag--selected`}>{c}</span>
+          ))}
         </div>
-      )}
+      </div>
     </div>
   )
 }

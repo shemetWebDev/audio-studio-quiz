@@ -11,7 +11,7 @@ export default function Home() {
       <div className={`${b}__grain`} />
 
       <div className={`${b}__hero`}>
-        {/* <span className={`${b}__badge`}>Открытый набор</span> */}
+        <span className={`${b}__brand`}>TopMusicArts</span>
 
         <h1 className={`${b}__title`}>
           Audio<br />
@@ -19,12 +19,13 @@ export default function Home() {
         </h1>
 
         <p className={`${b}__description`}>
-          Заполните форму для продолжения —<br />
-          это займёт не более пяти минут.
+          Ищем специалиста по воссозданию треков —<br />
+          по волне и спектру, до точного совпадения.
+          <span>Tech House · Melodic Techno · House</span>
         </p>
 
         <Link href="/quiz" className={`${b}__cta`}>
-          Заполнить анкету
+          Начать
           <span className={`${b}__cta-arrow`}>↗</span>
         </Link>
       </div>

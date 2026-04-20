@@ -37,6 +37,16 @@
     @include fade-up;
   }
 
+  &__brand {
+    font-family: $font-mono;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-text-hint;
+    margin-bottom: 1.75rem;
+    display: block;
+  }
+
   &__badge {
     font-family: $font-mono;
     font-size: 11px;
