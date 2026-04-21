@@ -4,24 +4,26 @@ import { FormData, defaultFormData, TOTAL_STEPS } from '@/types/form'
 import { useLang } from '@/contexts/LangContext'
 import ProgressBar    from '@/components/quiz/ProgressBar'
 import Step1Join      from '@/components/quiz/steps/Step1Contacts'
-import Step2Contacts  from '@/components/quiz/steps/Step2Experience'
-import Step3Task      from '@/components/quiz/steps/Step3Skills'
-import Step5Daw       from '@/components/quiz/steps/Step5Plugins'
-import Step4Tracks    from '@/components/quiz/steps/Step4Comparison'
-import StepProject    from '@/components/quiz/steps/StepProject'
-import Step7Portfolio from '@/components/quiz/steps/Step6Portfolio'
+import Step2Task      from '@/components/quiz/steps/Step3Skills'
+import Step3Images    from '@/components/quiz/steps/StepImages'
+import Step4Daw       from '@/components/quiz/steps/Step5Plugins'
+import Step5Tracks    from '@/components/quiz/steps/Step4Comparison'
+import Step6Project   from '@/components/quiz/steps/StepProject'
+import Step7Contacts  from '@/components/quiz/steps/Step6Portfolio'
 import StepDone       from '@/components/quiz/steps/StepDone'
 import '@/app/quiz/quiz.scss'
 
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 function canProceed(step: number, data: FormData): boolean {
   switch (step) {
-    case 1: return data.wantsToJoin === 'yes' && data.aboutSelf.trim().length > 0
-    case 2: return !!data.fullName.trim() && !!data.email.trim() && !!data.telegram.trim()
-    case 3: return !!data.taskConfidence
-    case 4: return !!data.daw
-    case 5: return !!data.tracksAssess
+    case 1: return data.wantsToJoin === 'yes'
+    case 2: return !!data.taskConfidence
+    case 3: return !!data.waveformUnderstanding
+    case 4: return !!data.tracksAssess
+    case 5: return !!data.daw
     case 6: return !!data.canRecreate
-    case 7: return true
+    case 7: return emailRe.test(data.email.trim()) && !!data.telegram.trim()
     default: return true
   }
 }
@@ -60,7 +62,7 @@ export default function QuizPage() {
     }
   }
 
-  if (step > TOTAL_STEPS) return <StepDone name={formData.fullName} />
+  if (step > TOTAL_STEPS) return <StepDone />
 
   const ready = canProceed(step, formData)
 
@@ -71,13 +73,13 @@ export default function QuizPage() {
         <ProgressBar current={step} total={TOTAL_STEPS} />
 
         <div className={`${b}__body`}>
-          {step === 1 && <Step1Join      data={formData} update={update} />}
-          {step === 2 && <Step2Contacts  data={formData} update={update} />}
-          {step === 3 && <Step3Task      data={formData} update={update} />}
-          {step === 4 && <Step5Daw       data={formData} update={update} />}
-          {step === 5 && <Step4Tracks    data={formData} update={update} />}
-          {step === 6 && <StepProject    data={formData} update={update} />}
-          {step === 7 && <Step7Portfolio data={formData} update={update} />}
+          {step === 1 && <Step1Join     data={formData} update={update} />}
+          {step === 2 && <Step2Task     data={formData} update={update} />}
+          {step === 3 && <Step3Images data={formData} update={update} />}
+          {step === 4 && <Step5Tracks   data={formData} update={update} />}
+          {step === 5 && <Step4Daw      data={formData} update={update} />}
+          {step === 6 && <Step6Project  data={formData} update={update} />}
+          {step === 7 && <Step7Contacts data={formData} update={update} />}
         </div>
 
         {error && <p className={`${b}__error`}>{error}</p>}

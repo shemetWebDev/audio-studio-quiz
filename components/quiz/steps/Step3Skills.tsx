@@ -19,9 +19,7 @@ export default function Step3Task({ data, update }: Props) {
 
   return (
     <div className={b}>
-      <p className={`${b}__index`}>{t.s3Index}</p>
       <h2 className={`${b}__heading`}>{t.s3Heading}</h2>
-      <p className={`${b}__subheading`}>{t.s3Sub}</p>
 
       <div className={`${b}__field`}>
         <label className={`${b}__label`}>{t.s3LabelTools}</label>

@@ -1,11 +1,11 @@
 export type FormData = {
   wantsToJoin: 'yes' | ''
-  aboutSelf: string
 
-  fullName: string
   email: string
   telegram: string
-  location: string
+
+  waveformUnderstanding: 'yes' | 'partially' | 'no' | ''
+  waveformComment: string
 
   taskConfidence: 'easy' | 'mixed' | 'learning' | ''
   taskComment: string
@@ -18,16 +18,14 @@ export type FormData = {
   canRecreate: 'yes' | 'partially' | 'no' | ''
   projectComment: string
 
-  portfolioLinks: string
 }
 
 export const defaultFormData: FormData = {
   wantsToJoin: '',
-  aboutSelf: '',
-  fullName: '',
   email: '',
   telegram: '',
-  location: '',
+  waveformUnderstanding: '',
+  waveformComment: '',
   taskConfidence: '',
   taskComment: '',
   daw: '',
@@ -35,7 +33,6 @@ export const defaultFormData: FormData = {
   tracksComment: '',
   canRecreate: '',
   projectComment: '',
-  portfolioLinks: '',
 }
 
 export const TOTAL_STEPS = 7

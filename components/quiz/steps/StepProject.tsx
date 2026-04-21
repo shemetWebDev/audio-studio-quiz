@@ -26,7 +26,6 @@ export default function StepProject({ data, update }: Props) {
 
   return (
     <div className={b}>
-      <p className={`${b}__index`}>{t.s6Index}</p>
       <h2 className={`${b}__heading`}>{t.s6Heading}</h2>
       <p className={`${b}__subheading`}>{t.s6Sub}</p>
 

@@ -54,7 +54,7 @@ async function sendEmail(html: string, text: string, name: string): Promise<void
     body: JSON.stringify({
       from: EMAIL_FROM,
       to: EMAIL_TO,
-      subject: `🎛 Анкета — ${name || 'Кандидат'} · Audio Studio`,
+      subject: `🎛 Анкета — ${name || 'Кандидат'} · TopMusicArts`,
       html,
       text,
     }),
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
 
     const [tgResult, emailResult] = await Promise.allSettled([
       sendTelegram(buildTelegramMessage(data)),
-      sendEmail(buildEmailHtml(data), buildEmailText(data), data.fullName),
+      sendEmail(buildEmailHtml(data), buildEmailText(data), data.email),
     ])
 
     const errors = [tgResult, emailResult]

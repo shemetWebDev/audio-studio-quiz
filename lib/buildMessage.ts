@@ -1,5 +1,10 @@
 import { FormData } from '@/types/form'
 
+const waveformMap: Record<string, string> = {
+  yes: '✅ Понимаю — справлюсь',
+  partially: '⚠️ Частично понимаю',
+  no: '📚 Хочу разобраться',
+}
 const confidenceMap: Record<string, string> = {
   easy: '✅ Уверен — справлюсь',
   mixed: '⚠️ Частично понимаю задачу',
@@ -19,31 +24,27 @@ export function buildTelegramMessage(data: FormData): string {
   const lines: (string | null)[] = [
     `🎛 *Новая анкета — TopMusicArts*`,
     '',
-    `👤 *${val(data.fullName)}*`,
     `📧 ${val(data.email)}`,
     `✈️ ${data.telegram ? `@${data.telegram.replace('@', '')}` : '—'}`,
-    `📍 ${val(data.location)}`,
     '',
-    `*01 · О себе*`,
-    val(data.aboutSelf),
+    `*03 · Волна и спектр*`,
+    `Оценка: ${waveformMap[data.waveformUnderstanding] || '—'}`,
+    opt('Комментарий', data.waveformComment),
     '',
-    `*03 · Задача*`,
+    `*04 · Задача*`,
     `Оценка: ${confidenceMap[data.taskConfidence] || '—'}`,
     opt('Комментарий', data.taskComment),
-    '',
-    `*04 · DAW*`,
-    val(data.daw),
     '',
     `*05 · Треки*`,
     `Оценка: ${assessMap[data.tracksAssess] || '—'}`,
     opt('Комментарий', data.tracksComment),
     '',
-    `*06 · Проект*`,
+    `*06 · DAW*`,
+    val(data.daw),
+    '',
+    `*07 · Проект*`,
     `Воссоздать: ${assessMap[data.canRecreate] || '—'}`,
     opt('Комментарий', data.projectComment),
-    data.portfolioLinks
-      ? ['', `*07 · Портфолио*`, data.portfolioLinks].join('\n')
-      : null,
   ]
 
   return lines.filter(l => l !== null).join('\n')
@@ -76,30 +77,30 @@ export function buildEmailHtml(data: FormData): string {
     <div style="background:#050508;padding:28px 32px">
       <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:8px">TopMusicArts · Hiring</div>
       <div style="font-size:22px;font-weight:600;color:#fff;letter-spacing:-0.02em">Новая анкета</div>
-      <div style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:4px">${data.fullName || 'Кандидат'}</div>
+      <div style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:4px">${data.email}</div>
     </div>
     <div style="padding:28px 32px">
       ${section('Контакты',
-        row('Имя', data.fullName) +
         row('Email', data.email) +
-        row('Telegram', data.telegram ? `@${data.telegram.replace('@', '')}` : '') +
-        row('Локация', data.location)
+        row('Telegram', data.telegram ? `@${data.telegram.replace('@', '')}` : '')
       )}
-      ${section('01 · О себе', row('', data.aboutSelf))}
-      ${section('03 · Задача',
+      ${section('03 · Волна и спектр',
+        row('Оценка', waveformMap[data.waveformUnderstanding]) +
+        row('Комментарий', data.waveformComment)
+      )}
+      ${section('04 · Задача',
         row('Оценка', confidenceMap[data.taskConfidence]) +
         row('Комментарий', data.taskComment)
       )}
-      ${section('04 · DAW', row('DAW', data.daw))}
       ${section('05 · Треки',
         row('Оценка', assessMap[data.tracksAssess]) +
         row('Комментарий', data.tracksComment)
       )}
-      ${section('06 · Проект',
+      ${section('06 · DAW', row('DAW', data.daw))}
+      ${section('07 · Проект',
         row('Воссоздать', assessMap[data.canRecreate]) +
         row('Комментарий', data.projectComment)
       )}
-      ${data.portfolioLinks ? section('07 · Портфолио', row('Ссылки', data.portfolioLinks)) : ''}
     </div>
     <div style="padding:14px 32px;border-top:1px solid #f0f0f0;font-size:12px;color:#ccc">
       Анкета получена через сайт · TopMusicArts Hiring

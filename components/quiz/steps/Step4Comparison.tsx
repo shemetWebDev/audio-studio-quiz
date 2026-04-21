@@ -19,7 +19,6 @@ export default function Step4Tracks({ data, update }: Props) {
 
   return (
     <div className={b}>
-      <p className={`${b}__index`}>{t.s5Index}</p>
       <h2 className={`${b}__heading`}>{t.s5Heading}</h2>
       <p className={`${b}__subheading`}>{t.s5Sub}</p>
 

@@ -14,16 +14,15 @@ export default function Home() {
 
       <div className={`${b}__hero`}>
         <span className={`${b}__brand`}>{t.brand}</span>
+        <span className={`${b}__badge`}>{t.mainBadge}</span>
 
         <h1 className={`${b}__title`}>
-          Audio<br />
-          <span className={`${b}__title-outline`}>Studio</span>
+          TopMusicArts
         </h1>
 
         <p className={`${b}__description`}>
           {t.mainDesc}<br />
           {t.mainDesc2}
-          <span>{t.mainGenres}</span>
         </p>
 
         <Link href="/quiz" className={`${b}__cta`}>

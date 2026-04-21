@@ -3,8 +3,9 @@ export type Lang = 'ru' | 'ua' | 'en'
 export const translations = {
   ru: {
     brand: 'TOPMUSICARTS',
-    mainDesc: 'Ищем специалиста по воссозданию треков —',
-    mainDesc2: 'по волне и спектру, до точного совпадения.',
+    mainBadge: 'Анкета',
+    mainDesc: 'Работай с музыкой.',
+    mainDesc2: 'Расти с нами.',
     mainGenres: 'Tech House · Melodic Techno · House',
     mainCta: 'Начать',
 
@@ -19,10 +20,10 @@ export const translations = {
 
     s1Index: '01 · О вас',
     s1Heading: 'Хотите стать частью команды TopMusicArts?',
-    s1Sub: 'Работать вместе с нами, занимаясь музыкой — воссоздавать треки, развиваться в продакшне.',
+    s1Sub: 'Хотите развиваться в музыке вместе с нами, работать с профессионалами и зарабатывать на своём деле?',
     s1OptYes: 'Да, хочу',
-    s1LabelAbout: 'Расскажите о себе',
-    s1PlaceholderAbout: 'Кто вы, чем занимаетесь, какой опыт в музыке...',
+    s1LabelAbout: '',
+    s1PlaceholderAbout: '',
 
     s2Index: '02 · Контакты',
     s2Heading: 'Как с вами связаться?',
@@ -34,11 +35,19 @@ export const translations = {
     s2LabelLocation: 'Город / страна',
     s2PlaceholderLocation: 'Киев, Украина',
 
+    sImgHeading: 'Воссоздание по волне и спектру',
+    sImgSub: 'Жанры — Tech House, Melodic Techno, House и другие. Нужно воссоздавать до идеального совпадения по форме волны и спектру.',
+    sImgHint: 'Нажмите на изображение для увеличения',
+    sImgLabelConfidence: 'Понимаете уровень воссоздания?',
+    sImgOptYes: 'Понимаю — справлюсь',
+    sImgOptPartially: 'Частично понимаю',
+    sImgOptNo: 'Хочу разобраться',
+
     s3Index: '03 · Задача',
-    s3Heading: 'Ваша задача — воссоздавать инструменталы',
-    s3Sub: 'Точное совпадение по волне и спектру, с использованием разрешённых инструментов.',
-    s3LabelTools: 'Разрешённые инструменты',
-    s3LabelCriteria: 'Критерии оценки',
+    s3Heading: 'Ваша задача — воссоздавать инструменталы в DAW',
+    s3Sub: '',
+    s3LabelTools: 'Используя инструменты',
+    s3LabelCriteria: 'Необходимо учитывать',
     s3LabelConfidence: 'Как вы оцениваете такую задачу?',
     s3OptEasy: 'Уверен — справлюсь',
     s3OptMixed: 'Частично понимаю задачу',
@@ -79,9 +88,9 @@ export const translations = {
       'Стандартные эффекты вашей DAW',
     ],
     criteriaItems: [
-      'Волновая форма и спектр', 'Ритм и грув',
-      'Пресеты и тембры', 'Аранжировка',
-      'Автоматизации', 'Общий уровень громкости (LUFS)',
+      'Волновую форму', 'Спектр', 'Ритм и грув',
+      'Пресеты', 'Аранжировку', 'Тембры',
+      'Автоматизации', 'Громкость (LUFS)',
     ],
 
     projectAbleton: 'Ableton Project',
@@ -96,8 +105,9 @@ export const translations = {
 
   ua: {
     brand: 'TOPMUSICARTS',
-    mainDesc: 'Шукаємо спеціаліста з відтворення треків —',
-    mainDesc2: 'за хвилею та спектром, до точного збігу.',
+    mainBadge: 'Анкета',
+    mainDesc: 'Працюй з музикою.',
+    mainDesc2: 'Зростай з нами.',
     mainGenres: 'Tech House · Melodic Techno · House',
     mainCta: 'Почати',
 
@@ -112,10 +122,10 @@ export const translations = {
 
     s1Index: '01 · Про вас',
     s1Heading: 'Хочете стати частиною команди TopMusicArts?',
-    s1Sub: 'Працювати разом з нами, займаючись музикою — відтворювати треки, розвиватися у продакшні.',
+    s1Sub: 'Хочете розвиватись у музиці разом з нами, працювати з професіоналами та заробляти на своїй справі?',
     s1OptYes: 'Так, хочу',
-    s1LabelAbout: 'Розкажіть про себе',
-    s1PlaceholderAbout: 'Хто ви, чим займаєтесь, який досвід у музиці...',
+    s1LabelAbout: '',
+    s1PlaceholderAbout: '',
 
     s2Index: '02 · Контакти',
     s2Heading: "Як з вами зв'язатись?",
@@ -127,11 +137,19 @@ export const translations = {
     s2LabelLocation: 'Місто / країна',
     s2PlaceholderLocation: 'Київ, Україна',
 
+    sImgHeading: 'Відтворення за хвилею і спектром',
+    sImgSub: 'Жанри — Tech House, Melodic Techno, House та інші. Потрібно відтворювати до ідеального збігу за формою хвилі та спектром.',
+    sImgHint: 'Натисніть на зображення для збільшення',
+    sImgLabelConfidence: 'Розумієте рівень відтворення?',
+    sImgOptYes: 'Розумію — впораюсь',
+    sImgOptPartially: 'Частково розумію',
+    sImgOptNo: 'Хочу розібратись',
+
     s3Index: '03 · Завдання',
-    s3Heading: 'Ваше завдання — відтворювати інструменталки',
-    s3Sub: 'Точний збіг за хвилею та спектром, з використанням дозволених інструментів.',
-    s3LabelTools: 'Дозволені інструменти',
-    s3LabelCriteria: 'Критерії оцінки',
+    s3Heading: 'Ваше завдання — відтворювати інструменталки у DAW',
+    s3Sub: '',
+    s3LabelTools: 'Використовуючи інструменти',
+    s3LabelCriteria: 'Необхідно враховувати',
     s3LabelConfidence: 'Як ви оцінюєте таке завдання?',
     s3OptEasy: 'Впевнений — впораюсь',
     s3OptMixed: 'Частково розумію завдання',
@@ -172,9 +190,9 @@ export const translations = {
       'Стандартні ефекти вашої DAW',
     ],
     criteriaItems: [
-      'Форма хвилі та спектр', 'Ритм і грув',
-      'Пресети та тембри', 'Аранжування',
-      'Автоматизації', 'Загальний рівень гучності (LUFS)',
+      'Форму хвилі', 'Спектр', 'Ритм і грув',
+      'Пресети', 'Аранжування', 'Тембри',
+      'Автоматизації', 'Гучність (LUFS)',
     ],
 
     projectAbleton: 'Ableton Project',
@@ -189,8 +207,9 @@ export const translations = {
 
   en: {
     brand: 'TOPMUSICARTS',
-    mainDesc: 'Looking for a specialist in track recreation —',
-    mainDesc2: 'by waveform and spectrum, to an exact match.',
+    mainBadge: 'Application',
+    mainDesc: 'Work with music.',
+    mainDesc2: 'Grow with us.',
     mainGenres: 'Tech House · Melodic Techno · House',
     mainCta: 'Start',
 
@@ -205,10 +224,10 @@ export const translations = {
 
     s1Index: '01 · About You',
     s1Heading: 'Want to join the TopMusicArts team?',
-    s1Sub: 'Work with us, doing what you love — recreating tracks and growing as a producer.',
+    s1Sub: 'Want to grow in music with us, work with professionals, and earn doing what you love?',
     s1OptYes: 'Yes, I want to',
-    s1LabelAbout: 'Tell us about yourself',
-    s1PlaceholderAbout: 'Who you are, your background, music experience...',
+    s1LabelAbout: '',
+    s1PlaceholderAbout: '',
 
     s2Index: '02 · Contacts',
     s2Heading: 'How can we reach you?',
@@ -220,11 +239,19 @@ export const translations = {
     s2LabelLocation: 'City / country',
     s2PlaceholderLocation: 'London, UK',
 
+    sImgHeading: 'Recreation by waveform and spectrum',
+    sImgSub: 'Genres — Tech House, Melodic Techno, House and others. Must recreate to an ideal match by waveform shape and spectrum.',
+    sImgHint: 'Click an image to zoom in',
+    sImgLabelConfidence: 'Do you understand the recreation level?',
+    sImgOptYes: 'Yes, I can handle it',
+    sImgOptPartially: 'Partially understand',
+    sImgOptNo: 'Want to learn',
+
     s3Index: '03 · Task',
-    s3Heading: 'Your task — recreate instrumentals',
-    s3Sub: 'Exact match by waveform and spectrum, using only the allowed tools.',
-    s3LabelTools: 'Allowed tools',
-    s3LabelCriteria: 'Evaluation criteria',
+    s3Heading: 'Your task — recreate instrumentals in your DAW',
+    s3Sub: '',
+    s3LabelTools: 'Using these tools',
+    s3LabelCriteria: 'You must match',
     s3LabelConfidence: 'How do you assess this task?',
     s3OptEasy: 'Confident I can do it',
     s3OptMixed: 'I partially understand it',
@@ -265,9 +292,9 @@ export const translations = {
       'Stock effects of your DAW',
     ],
     criteriaItems: [
-      'Waveform & spectrum', 'Rhythm & groove',
-      'Presets & timbre', 'Arrangement',
-      'Automation', 'Overall loudness (LUFS)',
+      'Waveform', 'Spectrum', 'Rhythm & groove',
+      'Presets', 'Arrangement', 'Timbre',
+      'Automation', 'Loudness (LUFS)',
     ],
 
     projectAbleton: 'Ableton Project',

@@ -5,29 +5,40 @@ import '@/components/quiz/steps/step.scss'
 
 type Props = { data: FormData; update: (f: Partial<FormData>) => void }
 
+const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 export default function Step7Portfolio({ data, update }: Props) {
   const { t } = useLang()
   const b = 'step'
+  const emailInvalid = data.email.length > 0 && !emailRe.test(data.email.trim())
 
   return (
     <div className={b}>
-      <p className={`${b}__index`}>{t.s7Index}</p>
       <h2 className={`${b}__heading`}>{t.s7Heading}</h2>
       <p className={`${b}__subheading`}>{t.s7Sub}</p>
 
       <div className={`${b}__field`}>
-        <label className={`${b}__label`}>
-          {t.s7LabelPortfolio}
-          <span className={`${b}__label-value`} style={{ fontSize: 11, opacity: 0.45 }}>{t.s7Optional}</span>
-        </label>
-        <textarea
-          className={`${b}__textarea`}
-          placeholder={t.s7PlaceholderPortfolio}
-          value={data.portfolioLinks}
-          onChange={e => update({ portfolioLinks: e.target.value })}
-          rows={4}
+        <label className={`${b}__label`}>{t.s2LabelEmail}</label>
+        <input
+          className={`${b}__input`}
+          type="email"
+          placeholder="you@example.com"
+          value={data.email}
+          onChange={e => update({ email: e.target.value })}
+          style={emailInvalid ? { borderColor: 'rgba(255,80,80,0.6)' } : undefined}
         />
       </div>
+
+      <div className={`${b}__field`}>
+        <label className={`${b}__label`}>{t.s2LabelTelegram}</label>
+        <input
+          className={`${b}__input`}
+          placeholder="@username"
+          value={data.telegram}
+          onChange={e => update({ telegram: e.target.value })}
+        />
+      </div>
+
     </div>
   )
 }

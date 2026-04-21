@@ -13,7 +13,6 @@ export default function Step5Daw({ data, update }: Props) {
 
   return (
     <div className={b}>
-      <p className={`${b}__index`}>{t.s4Index}</p>
       <h2 className={`${b}__heading`}>{t.s4Heading}</h2>
       <p className={`${b}__subheading`}>{t.s4Sub}</p>
 
